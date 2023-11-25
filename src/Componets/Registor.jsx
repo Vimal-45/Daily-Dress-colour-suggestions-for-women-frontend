@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+  const [profileImgage, setImageUrl] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -57,7 +57,7 @@ console.log((imageUrl));
       region: region,
       postalCode: postalCode,
       password: password,
-      profileImgage:imageUrl
+      profileImgage:profileImgage
     })
       .then(res => {
         alert(res.data.message)
@@ -77,6 +77,9 @@ console.log((imageUrl));
     setCity('')
     setRegion('')
     setPostalCode('')
+    navigate('/signin')
+
+
   };
 
   return (
