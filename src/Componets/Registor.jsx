@@ -17,7 +17,7 @@ const Register = () => {
   const [region, setRegion] = useState('');
   const [postalCode, setPostalCode] = useState('');
   const [file, setFile] = useState(null);
-  console.log(file);
+  console.log(file.name);
 
   const navigate = useNavigate()
   const myRef = useRef() 
