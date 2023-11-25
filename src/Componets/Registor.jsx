@@ -34,7 +34,7 @@ console.log((profileImgage));
     const uploadedfile = event.target.files[0];
     setFile(uploadedfile)
 
-    if (file) {
+    if (uploadedfile) {
       const imageUrl = URL.createObjectURL(uploadedfile);
       setImageUrl(imageUrl);
     }
@@ -167,7 +167,7 @@ console.log((profileImgage));
                             onChange={handleFileChange}
                           />
                         </label>
-                        <p className="pl-1">or drag and drop</p>
+                        <p className="pl-1"> {file} </p>
                       </div>
                       <p className="text-xs leading-5 text-gray-500">PNG, JPG, GIF up to 10MB</p>
                     </div>
