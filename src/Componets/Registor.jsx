@@ -18,7 +18,7 @@ const Register = () => {
   const [postalCode, setPostalCode] = useState('');
   const navigate = useNavigate()
   const myRef = useRef() 
-console.log((imageUrl));
+console.log((profileImgage));
   useEffect(()=>{
     myRef.current.focus()         
 
