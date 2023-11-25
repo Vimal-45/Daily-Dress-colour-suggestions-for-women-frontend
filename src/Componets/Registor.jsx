@@ -17,6 +17,7 @@ const Register = () => {
   const [region, setRegion] = useState('');
   const [postalCode, setPostalCode] = useState('');
   const [file, setFile] = useState(null);
+  console.log(file);
 
   const navigate = useNavigate()
   const myRef = useRef() 
@@ -169,7 +170,7 @@ console.log((profileImgage));
                             onChange={handleFileChange}
                           />
                         </label>
-                        <p className="pl-1"> {file.name} </p>
+                        {/* <p className="pl-1"> {file.name} </p> */}
                       </div>
                       <p className="text-xs leading-5 text-gray-500">PNG, JPG, GIF up to 10MB</p>
                     </div>
