@@ -49,7 +49,7 @@ console.log((profileImgage));
     
     // e.preventDefault();
  
-    if (!username || !password || !email || !selectedCountry || !streetAddress || !city || !region || !postalCode || !profileImgage) {
+    if (!username || !password || !email || !selectedCountry || !streetAddress || !city || !region || !profileImgage || !profileImgage) {
       alert('Please fill in all required fields.');
       return;
     }
@@ -68,6 +68,8 @@ console.log((profileImgage));
     })
       .then(res => {
         alert(res.data.message)
+        if(res.data.message === `User ${firstName, lastName} successfully registered` )
+        navigate('/signin')
       }).catch(err => {
         console.log(err);
 
@@ -83,7 +85,7 @@ console.log((profileImgage));
     setCity('')
     setRegion('')
     setPostalCode('')
-    navigate('/signin')
+   
 
 
   };
