@@ -47,7 +47,7 @@ console.log((profileImgage));
 
   const handleSubmit = (e) => {
     
-    // e.preventDefault();
+    e.preventDefault();
  
     if (!username || !password || !email || !selectedCountry || !streetAddress || !city || !region || !profileImgage || !profileImgage) {
       alert('Please fill in all required fields.');
