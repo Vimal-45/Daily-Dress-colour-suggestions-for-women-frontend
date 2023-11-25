@@ -17,6 +17,7 @@ const Register = () => {
   const [region, setRegion] = useState('');
   const [postalCode, setPostalCode] = useState('');
   const [file, setFile] = useState(null);
+  console.log(file)
   
 
   const navigate = useNavigate()
@@ -35,7 +36,7 @@ console.log((profileImgage));
   const handleFileChange = (event) => {
     const uploadedfile = event.target.files[0];
     setFile(uploadedfile);
-    console.log(file.name);
+   
   
     if (uploadedfile) {
       const imageUrl = URL.createObjectURL(uploadedfile);
@@ -171,7 +172,7 @@ console.log((profileImgage));
                             onChange={handleFileChange}
                           />
                         </label>
-                        {/* <p className="pl-1"> {file.name} </p> */}
+                        <p className="pl-1"> {file ? file.name : 'No file selected'} </p>
                       </div>
                       <p className="text-xs leading-5 text-gray-500">PNG, JPG, GIF up to 10MB</p>
                     </div>
