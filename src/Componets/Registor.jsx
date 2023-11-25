@@ -17,7 +17,7 @@ const Register = () => {
   const [region, setRegion] = useState('');
   const [postalCode, setPostalCode] = useState('');
   const [file, setFile] = useState(null);
-  console.log(file.name);
+  
 
   const navigate = useNavigate()
   const myRef = useRef() 
@@ -35,6 +35,7 @@ console.log((profileImgage));
   const handleFileChange = (event) => {
     const uploadedfile = event.target.files[0];
     setFile(uploadedfile);
+    console.log(file.name);
   
     if (uploadedfile) {
       const imageUrl = URL.createObjectURL(uploadedfile);
