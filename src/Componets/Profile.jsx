@@ -7,7 +7,7 @@ const Profile = () => {
     const navigate = useNavigate();
     const [profile, setProfile] = useState([]);
     const [colors, setColors] = useState('');
-    const[profileImage, setImage]=useState()
+    const[imageProfile, setImage]=useState()
 
    
 
@@ -69,7 +69,7 @@ const Profile = () => {
                                                     <div class="d-flex flex-column align-items-center text-center">
                                                         <img 
                                                         // src="https://bootdey.com/img/Content/avatar/avatar6.png" 
-                                                        src={profileImage}
+                                                        src={imageProfile}
 
                                                         alt="Admin" class="rounded-circle p-1 bg-primary" width="110" />
                                                         <div class="mt-3">
