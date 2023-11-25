@@ -73,8 +73,7 @@ console.log((profileImgage));
 
       })
 
-    setUsername('')
-    setAbout('')
+    setUsername('')   
     setFile(null)
     setFirstName('')
     setLastName('')
