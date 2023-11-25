@@ -16,6 +16,7 @@ const Register = () => {
   const [city, setCity] = useState('');
   const [region, setRegion] = useState('');
   const [postalCode, setPostalCode] = useState('');
+  const [file, setFile]=useState()
   const navigate = useNavigate()
   const myRef = useRef() 
 console.log((profileImgage));
@@ -30,10 +31,11 @@ console.log((profileImgage));
   };
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
+    const uploadedfile = event.target.files[0];
+    setFile(uploadedfile)
 
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
+      const imageUrl = URL.createObjectURL(uploadedfile);
       setImageUrl(imageUrl);
     }
   };
@@ -42,7 +44,7 @@ console.log((profileImgage));
     
     e.preventDefault();
  
-    if (!username || !password || !email || !selectedCountry || !streetAddress || !city || !region || !postalCode) {
+    if (!username || !password || !email || !selectedCountry || !streetAddress || !city || !region || !postalCode || !profileImgage) {
       alert('Please fill in all required fields.');
       return;
     }
