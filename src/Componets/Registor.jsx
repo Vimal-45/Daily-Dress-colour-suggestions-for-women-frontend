@@ -16,7 +16,8 @@ const Register = () => {
   const [city, setCity] = useState('');
   const [region, setRegion] = useState('');
   const [postalCode, setPostalCode] = useState('');
-  const [file, setFile]=useState()
+  const [file, setFile] = useState(null);
+
   const navigate = useNavigate()
   const myRef = useRef() 
 console.log((profileImgage));
@@ -32,13 +33,14 @@ console.log((profileImgage));
 
   const handleFileChange = (event) => {
     const uploadedfile = event.target.files[0];
-    setFile(uploadedfile)
-
+    setFile(uploadedfile);
+  
     if (uploadedfile) {
       const imageUrl = URL.createObjectURL(uploadedfile);
       setImageUrl(imageUrl);
     }
   };
+  
 
   const handleSubmit = (e) => {
     
@@ -59,7 +61,7 @@ console.log((profileImgage));
       region: region,
       postalCode: postalCode,
       password: password,
-      profileImgage:profileImgage
+      profileImage: profileImgage
     })
       .then(res => {
         alert(res.data.message)
@@ -167,7 +169,7 @@ console.log((profileImgage));
                             onChange={handleFileChange}
                           />
                         </label>
-                        <p className="pl-1"> {file} </p>
+                        <p className="pl-1"> {file.name} </p>
                       </div>
                       <p className="text-xs leading-5 text-gray-500">PNG, JPG, GIF up to 10MB</p>
                     </div>
