@@ -84,9 +84,8 @@ console.log((profileImgage));
     setCity('')
     setRegion('')
     setPostalCode('')
-    if(res.data.message){
-    navigate('/signin')}
-   
+    
+    navigate('/signin')   
 
 
   };
