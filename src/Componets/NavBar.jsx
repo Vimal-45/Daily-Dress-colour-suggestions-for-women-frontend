@@ -46,7 +46,7 @@ const NavBar = () => {
             .then(res => {
                 // console.log('Response:', res.data.colordata);
                 setUser(`${res.data.firstName} ${res.data.lastName}  `)
-                setImage(res.data.profileImgage)
+                setImage(res.data.profileImage)
                 
             })
             .catch(error => {

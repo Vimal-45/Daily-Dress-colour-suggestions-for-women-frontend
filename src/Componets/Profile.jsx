@@ -29,7 +29,7 @@ const Profile = () => {
                     const data = response.data.colordata;   
                     setProfile([response.data])                
                     setColorBasedOnDate(data, new Date());
-                    setImage(response.data.profileImgage)
+                    setImage(response.data.profileImage)
                 }
             } catch (error) {
                 console.error('Error making the GET request:', error);
