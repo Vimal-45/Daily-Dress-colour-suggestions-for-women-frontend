@@ -46,7 +46,7 @@ console.log((profileImgage));
   
 
   const handleSubmit = (e) => {
-    
+    console.log(profileImgage);
     e.preventDefault();
  
     if (!username || !password || !email || !selectedCountry || !streetAddress || !city || !region || !profileImgage || !profileImgage) {
