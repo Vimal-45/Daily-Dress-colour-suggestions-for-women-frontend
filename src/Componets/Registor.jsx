@@ -47,8 +47,7 @@ console.log((imageUrl));
       return;
     }
     axios.post('https://project-name-backend-4jrk.onrender.com/api/user/register', {
-      username: username,    
-      file: file,
+      username: username, 
       firstName: firstName,
       lastName: lastName,
       email: email,
@@ -57,7 +56,8 @@ console.log((imageUrl));
       city: city,
       region: region,
       postalCode: postalCode,
-      password: password
+      password: password,
+      profileImgage:imageUrl
     })
       .then(res => {
         alert(res.data.message)
