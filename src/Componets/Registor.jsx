@@ -67,9 +67,8 @@ console.log((profileImgage));
       profileImage: profileImgage
     })
       .then(res => {
-        alert(res.data.message)
-        if(res.data.message === `User ${firstName, lastName} successfully registered` )
-        navigate('/signin')
+        alert(res.data.message)      
+        
       }).catch(err => {
         console.log(err);
 
@@ -85,6 +84,8 @@ console.log((profileImgage));
     setCity('')
     setRegion('')
     setPostalCode('')
+    if(res.data.message){
+    navigate('/signin')}
    
 
 
