@@ -41,7 +41,7 @@
       if (uploadedfile) {
         const data = new FormData();
         data.append('file', file);
-        data.append('upload_preset', 'repx15tk');
+        data.append('upload_preset', 'stvzpsmo');
         data.append('cloud_name', 'dwo49uopx');
     
         axios.post('https://api.cloudinary.com/v1_1/dwo49uopx/image/upload', data)
