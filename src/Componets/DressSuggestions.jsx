@@ -25,7 +25,7 @@ const DressSuggestions = () => {
     const reasons = { party, wedding, casual };
     const places = { office, restaurant, beach };
     return (
-        <>
+        <> <div className='h-screen mt-16'>
             <h2 className="mt-10 text text-2xl font-bold leading-9 tracking-tight text-gray-900">
                 Select Your Collections
             </h2>
@@ -119,7 +119,7 @@ const DressSuggestions = () => {
                 })}
             </div>
 
-
+                </div>
         </>
     );
 };
