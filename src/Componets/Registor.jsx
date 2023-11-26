@@ -42,22 +42,22 @@ console.log((profileImage));
       // const imageUrl = URL.createObjectURL(uploadedfile);
       // setImageUrl(imageUrl);
       const data = new FormData();
-      const headers = {
-        "Content-Type": "multipart/form-data" 
-        // "Content-Type": "application/json" 
-      }
-      data.append('file', uploadedfile);
+      data.append('file', file);
       data.append('upload_preset', 'stvzpsmo');
       data.append('cloud_name', 'dwo49uopx');
   
-      axios.post('https://api.cloudinary.com/v1_1/dwo49uopx/image/upload', {headers, data})
+      axios.post('https://api.cloudinary.com/v1_1/dwo49uopx/image/upload', data)
         .then(response => {
+          // Handle success, e.g., update state or show a success message
           console.log(response.data.secure_url);
           setImageUrl(response.data.secure_url);
+  
+  
         })
         .catch(error => {
+          // Handle error, e.g., show an error message
           console.error(error);
-        });
+        });;
 
 
     }
