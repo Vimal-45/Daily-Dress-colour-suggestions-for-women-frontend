@@ -79,6 +79,7 @@ console.log((profileImage));
     })
       .then(res => {
         alert(res.data.message)
+      
       }).catch(err => {
         console.log(err);
 
@@ -94,7 +95,10 @@ console.log((profileImage));
     setCity('')
     setRegion('')
     setPostalCode('')
-    navigate('/signin')
+    if(res.data.length){
+      navigate('/signin')
+    }
+    
 
 
   };

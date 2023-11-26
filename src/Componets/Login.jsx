@@ -76,11 +76,6 @@ const Login = () => {
                             <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
                                 Password
                             </label>
-                            <div className="text-sm">
-                                <Link className="font-semibold text-indigo-600 hover:text-indigo-500" to={'/forget-pass'}>
-                                    Forget Password
-                                </Link>
-                            </div>
                         </div>
                         <div className="mt-2">
                             <input
@@ -105,6 +100,11 @@ const Login = () => {
                         </button>
                     </div>
                 </form>
+                            <div className="text-sm">
+                                <Link className="font-semibold text-indigo-600 hover:text-indigo-500" to={'/forget-pass'}>
+                                    Forget Password
+                                </Link>
+                            </div>
 
                 <p className="mt-10 text-center text-sm text-gray-500">
                     Not a member?
