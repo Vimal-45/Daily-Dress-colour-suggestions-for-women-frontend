@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-// import { PersonCircle } from 'react-bootstrap-icons';
+import { PersonCircle } from 'react-bootstrap-icons';
 import country from '../country.json';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -18,15 +18,15 @@ const Register = () => {
   const [postalCode, setPostalCode] = useState('');
   const [file, setFile] = useState(null);
   // console.log(file)
-  
+
 
   const navigate = useNavigate()
-  const myRef = useRef() 
-// console.log((profileImage));
-  useEffect(()=>{
-    myRef.current.focus()         
+  const myRef = useRef()
+  // console.log((profileImage));
+  useEffect(() => {
+    myRef.current.focus()
 
-},[])
+  }, [])
 
 
   const handleInputChange = (setState) => (e) => {
@@ -36,13 +36,13 @@ const Register = () => {
   const handleFileChange = (event) => {
     const uploadedfile = event.target.files[0];
     setFile(uploadedfile);
-  
+
     if (uploadedfile) {
       const data = new FormData();
       data.append('file', uploadedfile); // Use uploadedfile, not file
       data.append('upload_preset', 'stvzpsmo');
       data.append('cloud_name', 'dwo49uopx');
-  
+
       axios.post('https://api.cloudinary.com/v1_1/dwo49uopx/image/upload', data)
         .then(response => {
           console.log(response.data.secure_url);
@@ -53,19 +53,19 @@ const Register = () => {
         });
     }
   };
-  
-  
+
+
 
   const handleSubmit = (e) => {
-    
+
     e.preventDefault();
- 
+
     if (!username || !password || !email || !selectedCountry || !streetAddress || !city || !region || !postalCode || !profileImage) {
       alert('Please fill in all required fields.');
       return;
     }
     axios.post('https://project-name-backend-4jrk.onrender.com/api/user/register', {
-      username: username, 
+      username: username,
       firstName: firstName,
       lastName: lastName,
       email: email,
@@ -79,13 +79,13 @@ const Register = () => {
     })
       .then(res => {
         alert(res.data.message)
-      
+
       }).catch(err => {
         console.log(err);
 
       })
 
-    setUsername('')   
+    setUsername('')
     setFile(null)
     setFirstName('')
     setLastName('')
@@ -95,10 +95,10 @@ const Register = () => {
     setCity('')
     setRegion('')
     setPostalCode('')
-    if(res.data.length){
+    if (res.data.length) {
       navigate('/signin')
     }
-    
+
 
 
   };
@@ -171,8 +171,16 @@ const Register = () => {
                   </label>
                   <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                     <div className="text-center">
-                      {/* <PersonCircle className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" /> */}
-                      <img src={profileImage} alt="" className="mx-auto h-12 w-12 " />
+                      {profileImage ? (
+                        <img
+                          src={profileImage}
+                          alt=""
+                          className="mx-auto h-16 w-16 rounded-full object-cover"
+                          style={{ objectFit: 'cover' }} 
+                        />
+                      ) : (
+                        <PersonCircle className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
+                      )}
                       <div className="mt-4 flex text-sm leading-6 text-gray-500">
                         <label
                           htmlFor="file-upload"
@@ -358,7 +366,7 @@ const Register = () => {
           </div>
 
           <div className="mt-6 flex items-center justify-end gap-x-6">
-           
+
             <button
               type="submit"
               className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold  text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -366,10 +374,10 @@ const Register = () => {
               Save
             </button>
             <button
-              onClick={() => navigate('/signin')}            
+              onClick={() => navigate('/signin')}
               className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold  text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-             Sign IN
+              Sign IN
             </button>
 
           </div>
