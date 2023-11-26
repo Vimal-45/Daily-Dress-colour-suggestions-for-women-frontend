@@ -43,8 +43,8 @@ console.log((profileImage));
       // setImageUrl(imageUrl);
       const data = new FormData();
       const headers = {
-        // "Content-Type": "multipart/form-data" 
-        "Content-Type": "application/json" 
+        "Content-Type": "multipart/form-data" 
+        // "Content-Type": "application/json" 
       }
       data.append('file', uploadedfile);
       data.append('upload_preset', 'stvzpsmo');
