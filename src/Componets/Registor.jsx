@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [profileImgage, setImageUrl] = useState('');
+  const [profileImage, setImageUrl] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -17,49 +17,55 @@ const Register = () => {
   const [region, setRegion] = useState('');
   const [postalCode, setPostalCode] = useState('');
   const [file, setFile] = useState(null);
-  console.log(file)
-
+  // console.log(file)
+  
 
   const navigate = useNavigate()
-  const myRef = useRef()
-  console.log((profileImgage));
-  useEffect(() => {
-    myRef.current.focus();
-  }, []);
+  const myRef = useRef() 
+console.log((profileImage));
+  useEffect(()=>{
+    myRef.current.focus()         
 
+},[])
 
 
   const handleInputChange = (setState) => (e) => {
     setState(e.target.value);
   };
 
-  const saveImage = () => {
-    const data = new FormData();
-    data.append('file', file);
-    data.append('upload_preset', 'stvzpsmo');
-    data.append('cloud_name', 'dwo49uopx');
-
-    axios.post('https://api.cloudinary.com/v1_1/dwo49uopx/image/upload', data)
-      .then(response => {
-        console.log(response.data.secure_url);
-        setImageUrl(response.data.secure_url);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+  const handleFileChange = (event) => {
+    const uploadedfile = event.target.files[0];
+    setFile(uploadedfile);
+   
+  
+    if (uploadedfile) {
+      const data = new FormData();
+      data.append('file', file);
+      data.append('upload_preset', 'stvzpsmo');
+      data.append('cloud_name', 'dwo49uopx');
+  
+      axios.post('https://api.cloudinary.com/v1_1/dwo49uopx/image/upload', data)
+        .then(response => {
+          console.log(response.data.secure_url);
+          setImageUrl(response.data.secure_url);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
   };
-
+  
 
   const handleSubmit = (e) => {
-    console.log(profileImgage);
+    console.log(profileImage);
     e.preventDefault();
-
-    if (!username || !password || !email || !selectedCountry || !streetAddress || !city || !region || !profileImgage || !profileImgage) {
+ 
+    if (!username || !password || !email || !selectedCountry || !streetAddress || !city || !region || !postalCode || !profileImage) {
       alert('Please fill in all required fields.');
       return;
     }
     axios.post('https://project-name-backend-4jrk.onrender.com/api/user/register', {
-      username: username,
+      username: username, 
       firstName: firstName,
       lastName: lastName,
       email: email,
@@ -69,17 +75,17 @@ const Register = () => {
       region: region,
       postalCode: postalCode,
       password: password,
-      profileImage: profileImgage
+      profileImage: profileImage
     })
       .then(res => {
-        alert(res.data.message)
-
+        alert(res.data.message)      
+        
       }).catch(err => {
         console.log(err);
 
       })
 
-    setUsername('')
+    setUsername('')   
     setFile(null)
     setFirstName('')
     setLastName('')
@@ -89,8 +95,8 @@ const Register = () => {
     setCity('')
     setRegion('')
     setPostalCode('')
-
-    navigate('/signin')
+    
+    navigate('/signin')   
 
 
   };
@@ -175,7 +181,7 @@ const Register = () => {
                             name="file-upload"
                             type="file"
                             className="sr-only"
-                            onChange={(e) => setFile(e.target.files[0])}  // Set the selected file
+                            onChange={handleFileChange}
                           />
                         </label>
                         <p className="pl-1"> {file ? file.name : 'No file selected'} </p>
@@ -349,7 +355,7 @@ const Register = () => {
           </div>
 
           <div className="mt-6 flex items-center justify-end gap-x-6">
-
+           
             <button
               type="submit"
               className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold  text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -357,10 +363,10 @@ const Register = () => {
               Save
             </button>
             <button
-              onClick={() => navigate('/signin')}
+              onClick={() => navigate('/signin')}            
               className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold  text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Sign IN
+             Sign IN
             </button>
 
           </div>
