@@ -34,6 +34,7 @@ const Register = () => {
   };
 
   const saveImage = () => {
+    setFile(file)
     const data = new FormData();
     data.append('file', file);
     data.append('upload_preset', 'stvzpsmo');
