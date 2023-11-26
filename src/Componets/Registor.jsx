@@ -24,7 +24,7 @@ const Register = () => {
   const myRef = useRef() 
 console.log((profileImgage));
   useEffect(()=>{
-    myRef.current.focus()         
+    myRef.current.focus()         ductLink
 
 },[])
 
@@ -33,15 +33,22 @@ console.log((profileImgage));
     setState(e.target.value);
   };
 
-  const handleFileChange = (event) => {
-    const uploadedfile = event.target.files[0];
-    setFile(uploadedfile);
-   
-  
-    if (uploadedfile) {
-      const imageUrl = URL.createObjectURL(uploadedfile);
-      setImageUrl(imageUrl);
-    }
+  const saveImage = () => {
+    const data = new FormData();
+    data.append('file', file);
+    data.append('upload_preset', 'stvzpsmo');
+    data.append('cloud_name', 'dwo49uopx');
+
+    axios.post('https://api.cloudinary.com/v1_1/dwo49uopx/image/upload', data)
+      .then(response => {
+        
+        console.log(response.data.secure_url);
+        setImageUrl(response.data.secure_url)
+      })
+      .catch(error => {
+        
+        console.error(error);
+      });
   };
   
 
@@ -170,7 +177,7 @@ console.log((profileImgage));
                             name="file-upload"
                             type="file"
                             className="sr-only"
-                            onChange={handleFileChange}
+                            onChange={saveImage}
                           />
                         </label>
                         <p className="pl-1"> {file ? file.name : 'No file selected'} </p>
