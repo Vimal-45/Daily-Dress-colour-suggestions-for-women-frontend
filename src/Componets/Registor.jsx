@@ -51,6 +51,11 @@
           })
           .catch(error => {
             console.error(error);
+            if (file) {
+              const imageUrl = URL.createObjectURL(file);
+              setImageUrl(imageUrl);
+            }
+            
           });
       }
     };
