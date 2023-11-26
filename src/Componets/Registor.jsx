@@ -24,7 +24,7 @@ const Register = () => {
   const myRef = useRef() 
 console.log((profileImgage));
   useEffect(()=>{
-    myRef.current.focus()         ductLink
+    myRef.current.focus()         
 
 },[])
 
