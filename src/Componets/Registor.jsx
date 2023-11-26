@@ -23,10 +23,10 @@ const Register = () => {
   const navigate = useNavigate()
   const myRef = useRef() 
   console.log((profileImgage));
-  useEffect(()=>{
-    myRef.current.focus()       
-    
-    },[])
+  useEffect(() => {
+    myRef.current.focus();
+  }, []);
+  
 
 
   const handleInputChange = (setState) => (e) => {
