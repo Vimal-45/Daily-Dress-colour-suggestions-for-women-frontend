@@ -36,32 +36,24 @@ console.log((profileImage));
   const handleFileChange = (event) => {
     const uploadedfile = event.target.files[0];
     setFile(uploadedfile);
-   
   
     if (uploadedfile) {
-      // const imageUrl = URL.createObjectURL(uploadedfile);
-      // setImageUrl(imageUrl);
       const data = new FormData();
-      data.append('file', file);
+      data.append('file', uploadedfile); // Use uploadedfile, not file
       data.append('upload_preset', 'stvzpsmo');
       data.append('cloud_name', 'dwo49uopx');
   
       axios.post('https://api.cloudinary.com/v1_1/dwo49uopx/image/upload', data)
         .then(response => {
-          // Handle success, e.g., update state or show a success message
           console.log(response.data.secure_url);
           setImageUrl(response.data.secure_url);
-  
-  
         })
         .catch(error => {
-          // Handle error, e.g., show an error message
           console.error(error);
-        });;
-
-
+        });
     }
   };
+  
   
 
   const handleSubmit = (e) => {
