@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { PersonCircle } from 'react-bootstrap-icons';
+// import { PersonCircle } from 'react-bootstrap-icons';
 import country from '../country.json';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -17,12 +17,12 @@ const Register = () => {
   const [region, setRegion] = useState('');
   const [postalCode, setPostalCode] = useState('');
   const [file, setFile] = useState(null);
-  console.log(file)
+  // console.log(file)
   
 
   const navigate = useNavigate()
   const myRef = useRef() 
-console.log((profileImage));
+// console.log((profileImage));
   useEffect(()=>{
     myRef.current.focus()         
 
@@ -171,7 +171,8 @@ console.log((profileImage));
                   </label>
                   <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                     <div className="text-center">
-                      <PersonCircle className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
+                      {/* <PersonCircle className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" /> */}
+                      <img src={profileImage} alt="" className="mx-auto h-12 w-12 " />
                       <div className="mt-4 flex text-sm leading-6 text-gray-500">
                         <label
                           htmlFor="file-upload"
