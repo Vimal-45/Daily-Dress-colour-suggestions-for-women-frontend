@@ -106,7 +106,7 @@ const Login = () => {
                 <p className="mt-10 text-center text-sm text-gray-500">
                     <Link className="font-semibold text-indigo-600 hover:text-indigo-500 text-center" to={'/forget-pass'}>
                         Forget Password
-                    </Link>
+                    </Link> {' '}
 
                     Not a member?
                     <Link style={{ textAlign: 'center', display: 'block', marginTop: '5px' }} to={'/signup'}>

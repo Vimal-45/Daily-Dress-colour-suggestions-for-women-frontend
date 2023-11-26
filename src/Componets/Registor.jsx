@@ -45,7 +45,7 @@ const Register = () => {
 
       axios.post('https://api.cloudinary.com/v1_1/dwo49uopx/image/upload', data)
         .then(response => {
-          console.log(response.data.secure_url);
+          // console.log(response.data.secure_url);
           setImageUrl(response.data.secure_url);
         })
         .catch(error => {
