@@ -39,6 +39,12 @@ const Login = () => {
     };
 
     return (
+
+                <div className="bg-video-container">
+            <video autoPlay muted loop className="bg-video">
+                <source src="https://v.ftcdn.net/06/03/50/02/240_F_603500239_prjmq4c6rdtUE8JdywxRUlwWEcu8k5TD.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
         <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                 <img style={{ height: 120 }}
@@ -136,6 +142,7 @@ const Login = () => {
                 </p>
             </div>
         </div>
+       </div>
     );
 };
 
