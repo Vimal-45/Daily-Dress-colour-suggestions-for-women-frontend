@@ -61,7 +61,7 @@ const Home = () => {
         <div className="flex flex-col md:flex-row items-center p-8 h-screen mt-16">
             <div className="w-full md:w-1/2 pl-4 mb-4 md:mb-0">
                 
-                <div className="calendar-container border rounded shadow-md bg-white">
+                <div className="calendar-container border rounded bg-white">
                     <Calendar
                         onClickDay={(clickedDate) => {
                             setDate(clickedDate);
