@@ -119,7 +119,7 @@ const Login = () => {
                             ) : (
                                 'Sign in'
                             )}
-                            Sign in
+                        
                         </button>
                     </div>
                 </form>
