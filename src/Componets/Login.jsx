@@ -16,7 +16,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(email, password);
+        // console.log(email, password);
         axios.post('https://project-name-backend-4jrk.onrender.com/api/user/login', { email: email, password: password })
             .then((res) => {
                 if (!res.data.email) {
