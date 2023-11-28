@@ -10,7 +10,7 @@ const Dashboard = () => {
         const token = localStorage.getItem('TOKEN');
         const email = localStorage.getItem('EMAIL');
 
-        console.log(token);
+        // console.log(token);
         const headers = {
             Authorization: token,
             'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ const Dashboard = () => {
             axios
                 .get('https://project-name-backend-4jrk.onrender.com/api/user/getuser', { headers: headers })
                 .then((res) => {
-                    console.log('Response:', res.data.colordata);
+                    // console.log('Response:', res.data.colordata);
                     setColor(res.data.colordata);
                 })
                 .catch((error) => {
