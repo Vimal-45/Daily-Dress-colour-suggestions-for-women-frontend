@@ -102,16 +102,7 @@ const Register = () => {
 
       })
 
-    setUsername('')
-    setFile(null)
-    setFirstName('')
-    setLastName('')
-    setEmail('')
-    setSelectedCountry('')
-    setStreetAddress('')
-    setCity('')
-    setRegion('')
-    setPostalCode('')
+  
     
 
 
