@@ -39,6 +39,7 @@ const Register = () => {
     setFile(uploadedfile);
 
     if (uploadedfile) {
+      setLoading(true)
       const data = new FormData();
       data.append('file', uploadedfile); // Use uploadedfile, not file
       data.append('upload_preset', 'stvzpsmo');
@@ -82,11 +83,10 @@ const Register = () => {
     })
       .then(res => {
         alert(res.data.message)
-        if (res.data.message) {
-          setLoading(false)
+        if (res.data.message === `User ${firstName, lastName} successfully registered`) {
+          
           navigate('/signin')
-
-        }
+        } setLoading(false)
 
       }).catch(err => {
         console.log(err);
