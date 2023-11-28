@@ -82,7 +82,7 @@ const Register = () => {
     })
       .then(res => {
         alert(res.data.message)
-        if (res.data.length) {
+        if (res.data.message) {
           setLoading(false)
           navigate('/signin')
 
