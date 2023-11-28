@@ -84,8 +84,17 @@ const Register = () => {
       .then(res => {
         alert(res.data.message)
         if (res.data.message === `User ${firstName, lastName} successfully registered`) {
-          
-          navigate('/signin')
+             navigate('/signin')
+             setUsername('')
+             setFile(null)
+             setFirstName('')
+             setLastName('')
+             setEmail('')
+             setSelectedCountry('')
+             setStreetAddress('')
+             setCity('')
+             setRegion('')
+             setPostalCode('')
         } setLoading(false)
 
       }).catch(err => {
