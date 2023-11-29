@@ -31,7 +31,7 @@ const NavBar = () => {
     const token = localStorage.getItem('TOKEN')
     const email = localStorage.getItem('EMAIL')
 
-    console.log(token);
+    // console.log(token);
     const headers = {
         Authorization: token,
         'Content-Type': 'application/json'
