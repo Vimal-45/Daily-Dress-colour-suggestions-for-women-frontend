@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import country from '../country.json';
 // import country from '../country.json';
 
 
@@ -128,8 +129,8 @@ const Profile = () => {
             .then(res => {
                 alert(res.data.message)
                 setLoading(false)
-                if(res.data.message.length>0){
-                    
+                if (res.data.message.length > 0) {
+
                     navigate('/profile')
                     window.location.reload()
                 }
@@ -170,7 +171,7 @@ const Profile = () => {
                                                             <div className="mt-3">
                                                                 <h4>{item.firstName} {item.lastName}</h4>
                                                                 <h6 className="text-muted font-size-sm">
-                                                                    Bay Area {item.city} {item.region}
+                                                                    Bay Area {streetAddress} {item.city} {item.region}
                                                                 </h6>
                                                             </div>
                                                         </div>
@@ -241,14 +242,26 @@ const Profile = () => {
                                                                 <label className="mb-0">Country:</label>
                                                             </div>
                                                             <div className="col-sm-9 text-secondary">
-                                                                <input
-                                                                    type="text"
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-                                                                    placeholder={item.Country}
+                                                                <select
+                                                                    id="country"
+                                                                    name="country"
+                                                                    autoComplete="country-name"
                                                                     value={selectedCountry}
                                                                     onChange={handleInputChange(setSelectedCountry)}
+                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                >
+                                                                    {country.map((Item, index) => {
+                                                                        return (
+                                                                            <>
+                                                                                <option key={index} value={Item.name} >
+                                                                                    {Item.name}
+                                                                                </option>
+                                                                            </>
+                                                                        )
+                                                                    })
 
-                                                                />
+                                                                    }
+                                                                </select>
                                                             </div>
                                                         </div>
                                                         <div className="row mb-3">

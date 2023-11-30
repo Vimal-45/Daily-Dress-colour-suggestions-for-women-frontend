@@ -45,7 +45,7 @@ const NavBar = () => {
         axios.get('https://project-name-backend-4jrk.onrender.com/api/user/getuser', { headers: headers })
             .then(res => {
                 // console.log('Response:', res.data.colordata);
-                setUser(`${res.data.firstName} ${res.data.lastName}  `)
+                setUser(`${res.data.username}`)
                 setImage(res.data.profileImage)
                 
             })
