@@ -134,9 +134,8 @@ const NavBar = () => {
                                                 <span className="sr-only">Open user menu</span>
                                                 
                                                 {imageProfile ? (
-                                                    <img
-                                                        style={{ height: 120, borderRadius: '50%' }}
-                                                        className="mx-auto h-12 w-12 text-gray-300"
+                                                    <img                                                       
+                                                        className="h-8 w-8 rounded-full"
                                                         src={imageProfile}
                                                         alt="Your Company"
                                                     />
