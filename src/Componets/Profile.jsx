@@ -177,7 +177,7 @@ const Profile = () => {
 
                                                             )}
                                                             <div className="mt-3">
-                                                                {imageProfile ? (
+                                                                {item.firstName ? (
 
                                                                     <h4>{item.firstName} {item.lastName}</h4>
                                                                 ) : (
