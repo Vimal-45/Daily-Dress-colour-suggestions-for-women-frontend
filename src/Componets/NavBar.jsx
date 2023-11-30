@@ -136,7 +136,7 @@ const NavBar = () => {
                                                 {imageProfile ? (
                                                     <img
                                                         style={{ height: 120, borderRadius: '50%' }}
-                                                        className="mx-auto w-auto"
+                                                        className="h-8 w-8 rounded-full"
                                                         src={imageProfile}
                                                         alt="Your Company"
                                                     />
