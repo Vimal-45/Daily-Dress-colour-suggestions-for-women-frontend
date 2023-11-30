@@ -177,7 +177,16 @@ const Profile = () => {
 
                                                             )}
                                                             <div className="mt-3">
-                                                                <h4>{item.firstName} {item.lastName}</h4>
+                                                                {imageProfile ? (
+
+                                                                    <h4>{item.firstName} {item.lastName}</h4>
+                                                                ) : (
+
+                                                                    <h4>{item.username}</h4>
+                                                                )}
+
+
+
                                                                 <h6 className="text-muted font-size-sm">
                                                                     Bay Area {streetAddress} {item.city} {item.region}
                                                                 </h6>
