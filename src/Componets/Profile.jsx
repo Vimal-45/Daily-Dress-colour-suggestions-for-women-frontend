@@ -192,14 +192,14 @@ const Profile = () => {
                                                             <div className="col-sm-9 text-secondary">
                                                                 <input
                                                                     type="text"
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                    className="block w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                                                     placeholder={item.firstName}
                                                                     value={firstName}
                                                                     onChange={handleInputChange(setFirstName)}
                                                                 />
                                                                 <input
                                                                     type="text"
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                    className="block w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                                                     placeholder={item.lastName}
                                                                     value={lastName}
                                                                     onChange={handleInputChange(setLastName)}
@@ -214,7 +214,7 @@ const Profile = () => {
                                                             <div className="col-sm-9 text-secondary">
                                                                 <input
                                                                     type="text"
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                    className="block w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                                                     placeholder={item.email}
                                                                     value={email}
                                                                     onChange={handleInputChange(setEmail)}
@@ -229,7 +229,7 @@ const Profile = () => {
                                                             <div className="col-sm-9 text-secondary">
                                                                 <input
                                                                     type="text"
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                    className="block w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                                                     placeholder={item.username}
                                                                     value={username}
                                                                     onChange={handleInputChange(setUsername)}
@@ -248,7 +248,7 @@ const Profile = () => {
                                                                     autoComplete="country-name"
                                                                     value={selectedCountry}
                                                                     onChange={handleInputChange(setSelectedCountry)}
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                    className="block w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                                                 >
                                                                     {country.map((Item, index) => {
                                                                         return (
@@ -271,7 +271,7 @@ const Profile = () => {
                                                             <div className="col-sm-9 text-secondary">
                                                                 <input
                                                                     type="text"
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                    className="block w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                                                     placeholder={item.Address}
                                                                     value={streetAddress}
                                                                     onChange={handleInputChange(setStreetAddress)}
@@ -279,7 +279,7 @@ const Profile = () => {
                                                                 />
                                                                 <input
                                                                     type="text"
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                    className="block w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                                                     placeholder={item.city}
                                                                     value={city}
                                                                     onChange={handleInputChange(setCity)}
@@ -295,7 +295,7 @@ const Profile = () => {
                                                             <div className="col-sm-9 text-secondary">
                                                                 <input
                                                                     type="text"
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                    className="block w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                                                     placeholder={item.region}
                                                                     value={region}
                                                                     onChange={handleInputChange(setRegion)}
@@ -303,7 +303,7 @@ const Profile = () => {
                                                                 />
                                                                 <input
                                                                     type="text"
-                                                                    className="border-b border-gray-300 focus:outline-none focus:border-indigo-500"
+                                                                    className="block w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
                                                                     placeholder={item.postalCode}
                                                                     value={postalCode}
                                                                     onChange={handleInputChange(setPostalCode)}
