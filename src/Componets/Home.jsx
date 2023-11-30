@@ -58,10 +58,15 @@ const Home = () => {
     };
 
     return (
-        <div className="flex flex-col md:flex-row items-center p-8 h-screen mt-16">
+        <div style={{background:`${colors}`}} className="flex flex-col md:flex-row items-center p-8 h-screen mt-16">
+          
+          
             <div className="w-full md:w-1/2 pl-4 mb-4 md:mb-0">
+               <p className="text-center mt-4">
+                    <span className="font-bold">Selected Date:</span> {date.toDateString()}
+                </p>
                 
-                <div className="calendar-container rounded bg-white">
+                {/* <div  className="calendar-container rounded bg-white"> */}
                     <Calendar
                         onClickDay={(clickedDate) => {
                             setDate(clickedDate);
@@ -81,10 +86,8 @@ const Home = () => {
                             return '';
                         }}
                     />
-                </div>
-                <p className="text-center mt-4">
-                    <span className="font-bold">Selected Date:</span> {date.toDateString()}
-                </p>
+                {/* </div> */}
+
             </div>
             <h1 className="text-center text-3xl font-bold mb-4">Today Your Colour Is</h1>
                         <div style={{ backgroundColor: `${colors}` }} >
