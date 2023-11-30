@@ -12,7 +12,7 @@ import Logo from '../assets/2028070-3f51b5.svg'
 
 const navigation = [
     { name: 'HOME', href: 'home', current: true },
-  { name: 'DASHBOARD', href: 'dashboard', current: true },
+  { name: 'DASHBOARD', href: 'dashboard', current: false },
   { name: 'COLLECTIONS', href: 'DressSuggestions', current: false },
 //   { name: 'Your Profile', href: 'profile', current: false },
 
