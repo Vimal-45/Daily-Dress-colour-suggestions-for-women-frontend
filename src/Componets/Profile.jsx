@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { PersonCircle } from 'react-bootstrap-icons';
 import axios from 'axios';
 import country from '../country.json';
 // import country from '../country.json';
@@ -162,12 +163,19 @@ const Profile = () => {
                                                 <div className="card">
                                                     <div className="card-body">
                                                         <div className="d-flex flex-column align-items-center text-center">
-                                                            <img
-                                                                src={imageProfile}
-                                                                alt="Admin"
-                                                                className="rounded-circle p-1 bg-primary"
-                                                                width="110"
-                                                            />
+                                                            {imageProfile ? (
+                                                                <img
+                                                                    style={{ height: 120, borderRadius: '50%' }}
+                                                                    className="mx-auto w-auto"
+                                                                    src={imageProfile}
+                                                                    alt="Your Company"
+                                                                />
+
+                                                            ) : (
+                                                                <PersonCircle className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
+
+
+                                                            )}
                                                             <div className="mt-3">
                                                                 <h4>{item.firstName} {item.lastName}</h4>
                                                                 <h6 className="text-muted font-size-sm">

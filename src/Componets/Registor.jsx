@@ -66,8 +66,8 @@ const Register = () => {
       setLoading(false)
       return;
     }
-    // axios.post('https://project-name-backend-4jrk.onrender.com/api/user/register', {
-    axios.post('http://localhost:4000/api/user/register', {
+    axios.post('https://project-name-backend-4jrk.onrender.com/api/user/register', {
+
       username: username,
       email: email,
       password: password,
