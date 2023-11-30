@@ -38,12 +38,11 @@ const Login = () => {
         setEmail('');
         setPassword('');
     };
-    const imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzcEUiWZF3LDOE2zvnZiRttAkShp1SSiGIBOOIX0qkwz6QksmyW2kCQ4gB0zSC4nW9Ly8&usqp=CAU"
 
     return (
 
 
-        <div style={{ backgroundImage: `url(${imageUrl})` }} className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+        <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
 
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                 <img style={{ height: 120 }}
